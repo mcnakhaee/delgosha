@@ -14,6 +14,38 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+
+### Installation
+
+```{r eval FALSE}
+remotes::install_github('mcnakhaee/delgosha')
+```
+
+
+### Basic Usage
+
+```{r}
 library(delgosha)
+library(tidyverse)
+
+
+spotify <- dadegan::spotify
+spotify %>% 
+  filter(artist_name %in% c('Alireza Eftekhari','Mohammadreza Shajarian','Alireza Ghorbani')) %>% 
+  ggplot((aes(valence,popularity,color = artist_name_farsi))) +
+  geom_point(alpha = 0.6,size = 3) +
+  labs(x = 'شادی',
+       y = 'محبوبیت',
+       title = 'مقایسه ای بین محبوبیت و شادی آهنگ های سه خواننده محبوب سنتی',
+       subtitle = '',
+       caption =  'مصورسازی: محمد چناریان نخعی',
+       color = '') +
+  facet_wrap(~artist_name_farsi) +
+  scale_color_farsh() +
+  theme_farsh_fa()
+```
+
+```{r setup}
+
+
 ```
