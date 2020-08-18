@@ -1,3 +1,38 @@
+#' Title
+#'
+#' @param base_font
+#' @param base_size
+#' @param plot_title_font
+#' @param plot_title_size
+#' @param plot_title_face
+#' @param plot_title_margin
+#' @param subtitle_font
+#' @param subtitle_size
+#' @param subtitle_face
+#' @param subtitle_margin
+#' @param strip_text_font
+#' @param strip_text_size
+#' @param strip_text_face
+#' @param caption_font
+#' @param caption_size
+#' @param caption_face
+#' @param caption_margin
+#' @param legend_font
+#' @param legend_font_size
+#' @param legend_color
+#' @param legend_title_size
+#' @param legend_position
+#' @param axis_text_size
+#' @param axis_title_font
+#' @param axis_title_size
+#' @param axis_title_face
+#' @param axis_title_just
+#' @param plot_margin
+#'
+#' @return
+#' @export
+#'
+#' @examples
 theme_minimal_fa <- function(base_font = "Nahid FD",
                            base_size = 12.5,
                            plot_title_font = "Nahid FD",
