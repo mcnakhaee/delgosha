@@ -5,10 +5,40 @@
 \title{Title
 https://www.roozrang.com/\%d8\%b7\%d8\%b1\%d8\%a7\%d8\%ad\%db\%8c-\%d9\%87\%d9\%88\%db\%8c\%d8\%aa-\%d8\%a8\%d8\%b5\%d8\%b1\%db\%8c-\%d8\%af\%d8\%a7\%db\%8c\%d9\%86\%d8\%a7\%d9\%85\%db\%8c\%da\%a9-\%d9\%85\%d9\%88\%d8\%b2\%d9\%87-\%d9\%81\%d8\%b1\%d8\%b4-\%d8\%aa\%d9\%87\%d8\%b1\%d8\%a7/}
 \usage{
-theme_farsh_fa()
-}
-\value{
-
+theme_farsh_fa(
+  base_font = "Vazir FD",
+  base_size = 11.5,
+  plot_title_font = "Vazir Black FD",
+  plot_title_size = 25,
+  plot_title_face = "bold",
+  plot_title_margin = 10,
+  subtitle_font = base_font,
+  subtitle_size = 20,
+  subtitle_face = "plain",
+  subtitle_margin = 15,
+  strip_text_font = base_font,
+  strip_text_size = 12,
+  strip_text_face = "plain",
+  caption_font = base_font,
+  caption_size = 9,
+  caption_face = "italic",
+  caption_margin = 10,
+  legend_font = "Vazir FD",
+  legend_font_size = 10,
+  legend_title_size = 12,
+  legend_position = "top",
+  axis_text_size = base_size,
+  axis_title_font = subtitle_font,
+  axis_title_size = 9,
+  axis_title_face = "plain",
+  axis_title_just = "rt",
+  plot_margin = margin(30, 30, 30, 30),
+  grid_col = "#cccccc",
+  grid = TRUE,
+  axis_col = "#cccccc",
+  axis = FALSE,
+  ticks = FALSE
+)
 }
 \description{
 Title
