@@ -180,6 +180,12 @@ theme_hamshari <- function(base_font = "Zangar",
 #' @param axis_col
 #' @param axis
 #' @param ticks
+#' @param strip_text_margin
+#' @param legend_font
+#' @param legend_font_size
+#' @param legend_color
+#' @param legend_title_size
+#' @param legend_position
 #'
 #' @thmurn
 #' @export

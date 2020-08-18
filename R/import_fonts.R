@@ -10,10 +10,10 @@ import_hamshahri <- function() {
   hamshahri_font_dir <- system.file("fonts", "Hamshahri", package = "delgosha")
 
   suppressWarnings(suppressMessages(extrafont::font_import(paths = hamshahri_font_dir, prompt = FALSE)))
-  # if (.Platform$OS.type == "windows") {
-  #   myFont <- "A Zangar_Hamshahri"
-  #   windowsFonts(Zangar  = myFont)
-  # }
+  if (.Platform$OS.type == "windows") {
+    myFont <- "A Zangar_Hamshahri"
+    windowsFonts(Zangar  = myFont)
+  }
   message(
     sprintf(
       "You should install these fonts on your system directly. The files are located in [%s]",
@@ -24,16 +24,22 @@ import_hamshahri <- function() {
 
 
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_vazir <- function() {
   vazir_font_dir <- system.file("fonts", "vazir-font", package = "delgosha")
 
   suppressWarnings(suppressMessages(extrafont::font_import(paths = vazir_font_dir, prompt = FALSE)))
-  # if (.Platform$OS.type == "windows") {
-  #   myFont <- "Vazir FD"
-  #   windowsFonts(`Vazir FD` = myFont)
-  #   myFont <- "Vazir Black FD"
-  #   windowsFonts( `Vazir Black FD`  = myFont)
-  # }
+  if (.Platform$OS.type == "windows") {
+    myFont <- "Vazir FD"
+    windowsFonts(`Vazir FD` = myFont)
+    myFont <- "Vazir Black FD"
+    windowsFonts( `Vazir Black FD`  = myFont)
+  }
   message(
     sprintf(
       "You should install these fonts on your system directly. The files are located in [%s]",
@@ -43,14 +49,20 @@ import_vazir <- function() {
 }
 
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_yekan <- function() {
   yekan_font_dir <- system.file("fonts", "Yekan", package = "delgosha")
 
   suppressWarnings(suppressMessages(extrafont::font_import(paths = yekan_font_dir, prompt = FALSE)))
-  # if (.Platform$OS.type == "windows") {
-  #   myFont <- "2  Yekan"
-  #   windowsFonts(`2  Yekan` = myFont)
-  # }
+  if (.Platform$OS.type == "windows") {
+    myFont <- "2  Yekan"
+    windowsFonts(`2  Yekan` = myFont)
+  }
   message(
     sprintf(
       "You should install these fonts on your system directly. The files are located in [%s]",
@@ -60,14 +72,20 @@ import_yekan <- function() {
 }
 
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_aljazeera <- function() {
   aljazeera_font_dir <- system.file("fonts", "Aljazeera", package = "delgosha")
 
   suppressWarnings(suppressMessages(extrafont::font_import(paths = aljazeera_font_dir, prompt = FALSE)))
-  # if (.Platform$OS.type == "windows") {
-  #   myFont <- "2  Yekan"
-  #   windowsFonts(`2  Yekan` = myFont)
-  # }
+  if (.Platform$OS.type == "windows") {
+    myFont <- "Aljazeera"
+    windowsFonts(`Aljazeera` = myFont)
+  }
   message(
     sprintf(
       "You should install these fonts on your system directly. The files are located in [%s]",
