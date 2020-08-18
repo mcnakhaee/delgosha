@@ -13,6 +13,9 @@ import_hamshahri <- function() {
   if (.Platform$OS.type == "windows") {
     myFont <- "A Zangar_Hamshahri"
     windowsFonts(Zangar  = myFont)
+    myFont <- "A Rooznameh"
+    windowsFonts(`A Rooznameh`  = myFont)
+
   }
   message(
     sprintf(
