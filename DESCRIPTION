@@ -20,13 +20,17 @@ Imports:
     magick (>= 2.0),
     glue (>= 1.3.1),
     grDevices (>= 3.5.3),
-    ggthemes
+    ggthemes,
+    knitr,
+    rmarkdown,
+    htmltools,
+    tools,
+    magrittr,
+    gdtools
 Suggests: 
     testthat (>= 2.1.1),
     dplyr (>= 0.8.0.1),
     cowplot (>= 0.9.4),
     png (>= 0.1-7),
-    stringr,
-    knitr,
-    rmarkdown
+    stringr
 VignetteBuilder: knitr
