@@ -96,14 +96,20 @@ import_nika <- function() {
 
 
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_nahid <- function() {
   nahid_font_dir <- system.file("fonts", "Nahid", package = "delgosha")
 
   suppressWarnings(suppressMessages(extrafont::font_import(paths = nahid_font_dir, prompt = FALSE)))
-  # if (.Platform$OS.type == "windows") {
-  #   myFont <- "2  Yekan"
-  #   windowsFonts(`2  Yekan` = myFont)
-  # }
+  if (.Platform$OS.type == "windows") {
+    myFont <- "Nahid FD"
+    windowsFonts(`Nahid FD` = myFont)
+  }
   message(
     sprintf(
       "You should install these fonts on your system directly. The files are located in [%s]",
@@ -113,14 +119,22 @@ import_nahid <- function() {
 }
 
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_samim <- function() {
   samim_font_dir <- system.file("fonts", "Samim", package = "delgosha")
 
   suppressWarnings(suppressMessages(extrafont::font_import(paths = samim_font_dir, prompt = FALSE)))
-  # if (.Platform$OS.type == "windows") {
-  #   myFont <- "2  Yekan"
-  #   windowsFonts(`2  Yekan` = myFont)
-  # }
+  if (.Platform$OS.type == "windows") {
+    myFont <- "Samim FD"
+    windowsFonts(`Samim Medium FD` = myFont)
+    myFont <- "Samim Medium FD"
+    windowsFonts(`Samim Medium FD` = myFont)
+  }
   message(
     sprintf(
       "You should install these fonts on your system directly. The files are located in [%s]",
