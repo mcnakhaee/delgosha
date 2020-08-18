@@ -23,5 +23,10 @@ Imports:
     ggthemes
 Suggests: 
     testthat (>= 2.1.1),
-    dplyr (>= 0.8.0.1)
+    dplyr (>= 0.8.0.1),
+    cowplot (>= 0.9.4),
+    png (>= 0.1-7),
+    stringr,
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
