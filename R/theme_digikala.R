@@ -114,6 +114,18 @@ theme_digikala <- function(base_font = "2  Yekan",
 
   thm <-
     thm + theme(
+      axis.title.y = element_text(margin = margin(
+        t = 0,
+        r = 10,
+        b = 0,
+        l = 0
+      )),
+      axis.title.x = element_text(margin = margin(
+        t = 10,
+        r = 0,
+        b = 0,
+        l = 0
+      )),
       axis.line = element_line(color = axis_line_color, size = 0.15),
       panel.grid = element_blank()
     )

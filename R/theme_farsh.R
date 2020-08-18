@@ -103,9 +103,11 @@ theme_farsh_fa <- function(base_font = "Vazir FD",
                      panel.spacing.x = unit(2, "lines"),
                      panel.spacing.y = unit(2, "lines"))
 
-  thm <- thm + theme(axis.text =  element_text(color = text_col)) +
-    theme(line = element_line(color = text_col)) +
-    theme(axis.ticks = element_line(color = text_col))
+  thm <- thm + theme(axis.text =  element_text(color = text_col),
+                     axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+                     axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+                     line = element_line(color = text_col),
+                     axis.ticks = element_line(color = text_col))
 
 
   thm <- thm + theme(plot.margin = plot_margin )
