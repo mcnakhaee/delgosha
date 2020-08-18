@@ -23,12 +23,5 @@ Imports:
     ggthemes
 Suggests: 
     testthat (>= 2.1.1),
-    gapminder (>= 0.3.0),
-    dplyr (>= 0.8.0.1),
-    spelling (>= 2.0),
-    cowplot (>= 0.9.4),
-    png (>= 0.1-7),
-    stringr,
-    knitr,
-    rmarkdown
+    dplyr (>= 0.8.0.1)
 VignetteBuilder: knitr
