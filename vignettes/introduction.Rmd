@@ -1,0 +1,19 @@
+---
+title: "A Guide to Naqsh Themes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{A Guide to Naqsh Themes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(delgosha)
+```
