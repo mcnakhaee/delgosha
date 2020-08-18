@@ -14,4 +14,3 @@
 #' @importFrom gdtools set_dummy_conf
 #' @import rmarkdown knitr htmltools
 "_PACKAGE"
-
