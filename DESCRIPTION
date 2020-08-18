@@ -31,3 +31,4 @@ Suggests:
     stringr,
     knitr,
     rmarkdown
+VignetteBuilder: knitr
