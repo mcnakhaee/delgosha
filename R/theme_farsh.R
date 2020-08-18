@@ -4,14 +4,14 @@
 #' @export
 #'
 #' @examples
-theme_farsh_fa <- function(base_font = "Vazir",
+theme_farsh_fa <- function(base_font = "Vazir FD",
                            base_size = 11.5,
-                           plot_title_font = "Vazir",
-                           plot_title_size = 18,
+                           plot_title_font = "Vazir Black FD",
+                           plot_title_size = 25,
                            plot_title_face = "bold",
                            plot_title_margin = 10,
                            subtitle_font = base_font,
-                           subtitle_size = 12,
+                           subtitle_size = 20,
                            subtitle_face = "plain",
                            subtitle_margin = 15,
                            strip_text_font = base_font,
@@ -21,7 +21,7 @@ theme_farsh_fa <- function(base_font = "Vazir",
                            caption_size = 9,
                            caption_face = "italic",
                            caption_margin = 10,
-                           legend_font = "Vazir",
+                           legend_font = "Vazir FD",
                            legend_font_size = 10,
                            legend_title_size = 12,
                            legend_position = 'top',
@@ -60,8 +60,8 @@ theme_farsh_fa <- function(base_font = "Vazir",
   thm <-
     thm + theme(text = element_text( color = text_col),
       plot.title = element_text(family =  plot_title_font, hjust = 1, margin=margin(b=plot_title_margin) , color = text_col),
-                plot.subtitle = element_text(family =  plot_title_font, hjust = 1, margin=margin(b=subtitle_margin) , face = subtitle_face,color = text_col ),
-                plot.caption = element_text(family =  plot_title_font, hjust = 0,face = caption_face,color = text_col )
+                plot.subtitle = element_text(family =  subtitle_font, hjust = 1, margin=margin(b=subtitle_margin) , face = subtitle_face,color = text_col ),
+                plot.caption = element_text(family =  caption_font, hjust = 0,face = caption_face,color = text_col )
     )
 
 
