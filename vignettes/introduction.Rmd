@@ -24,7 +24,7 @@ remotes::install_github('mcnakhaee/delgosha')
 
 ### Basic Usage
 
-```{r}
+```{r fig.height= 5, fig.width=10}
 library(delgosha)
 library(tidyverse)
 
@@ -45,7 +45,28 @@ spotify %>%
   theme_farsh_fa()
 ```
 
-```{r setup}
+```{r eval = FALSE }
+
+factnameh <- dadegan::factnameh
+
+
+factnameh %>%
+  count(tags, sort = TRUE) %>%
+  filter(!is.na(tags)) %>%
+  slice(1:10) %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین تعداد درستی سنجی',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.'
+  ) +
+  theme_hamshahri()
 
 
 ```
+
+
+### Fonts
