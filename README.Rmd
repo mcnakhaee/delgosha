@@ -1,0 +1,95 @@
+---
+title: "Delgosha"
+output: github_document
+---
+
+### Installation
+
+```{r eval = FALSE}
+remotes::install_github('mcnakhaee/delgosha')
+```
+
+
+### Basic Usage
+
+
+#### Farsh theme
+
+```{r fig.height= 5, fig.width=10}
+library(delgosha)
+library(tidyverse)
+
+spotify <- dadegan::spotify
+spotify %>% 
+  filter(artist_name %in% c('Alireza Eftekhari','Mohammadreza Shajarian','Alireza Ghorbani')) %>% 
+  ggplot((aes(valence,popularity,color = artist_name_farsi))) +
+  geom_point(alpha = 0.6,size = 3) +
+  labs(x = 'شادی',
+       y = 'محبوبیت',
+       title = 'مقایسه ای بین محبوبیت و شادی آهنگ های سه خواننده محبوب سنتی',
+       subtitle = '',
+       caption =  'مصورسازی: محمد چناریان نخعی',
+       color = '') +
+  facet_wrap(~artist_name_farsi) +
+  scale_color_farsh() +
+  theme_farsh_fa()
+```
+
+
+#### Hamshahri theme
+
+```{r eval = TRUE}
+factnameh <- dadegan::factnameh
+tags_count <- factnameh %>%
+  count(tags, sort = TRUE) %>%
+  filter(!is.na(tags)) %>%
+  slice(1:10) 
+
+
+tags_count %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین تعداد درستی سنجی',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.'
+  ) +
+  theme_hamshahri()
+```
+
+There is also modern version of Hamshari's theme which can be used by `theme_hamshahri_modern` function.
+
+```{r}
+tags_count %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین  تعداد  مقالات درستی سنجی شده',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.',
+    caption = 'منبع: وبسایت فکت نامه'
+  ) +
+  theme_hamshahri_modern()
+```
+
+#### Digikala theme
+
+```{r}
+books <- dadegan::books
+
+books %>%
+  #count(turn_published)
+  mutate(page_num = as.numeric(page_num)) %>% 
+  filter(page_num < 10000) %>% 
+  ggplot(aes(x = page_num)) +
+  geom_histogram(alpha = 0.5,bins = 100) +
+  labs(x = 'تعداد صفحات',
+       y = 'فراوانی',
+       title = 'فراوانی تعداد صفحات کتاب های چاپ شده در ایران') +
+  theme_digikala()
+```
+
