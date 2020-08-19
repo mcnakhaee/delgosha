@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_minimal_fa.R
 \name{theme_minimal_fa}
 \alias{theme_minimal_fa}
-\title{Title}
+\title{A minimal ggplot2 theme with Persian fonts and rtl support}
 \usage{
 theme_minimal_fa(
   base_font = "Nahid FD",
@@ -27,11 +27,10 @@ theme_minimal_fa(
   legend_color = "gray40",
   legend_title_size = 12,
   legend_position = "top",
+  axis_margin = 10,
   axis_text_size = base_size,
   axis_title_font = subtitle_font,
   axis_title_size = 12,
-  axis_title_face = "plain",
-  axis_title_just = "rt",
   plot_margin = margin(30, 30, 30, 30)
 )
 }
@@ -42,5 +41,5 @@ theme_minimal_fa(
 
 }
 \description{
-Title
+A minimal ggplot2 theme with Persian fonts and rtl support
 }

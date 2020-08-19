@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_tufte_fa.R
 \name{theme_tufte_fa}
 \alias{theme_tufte_fa}
-\title{Title}
+\title{A version Tufte theme from \link{ggthemes} with Persian Fonts and rtl support}
 \usage{
 theme_tufte_fa(
   base_font = "Samim FD",
@@ -36,11 +36,19 @@ theme_tufte_fa(
 )
 }
 \arguments{
+\item{base_font}{base font family}
+
+\item{base_size}{base font size}
+
+\item{plot_title_font}{title font family}
+
+\item{plot_title_size}{font size}
+
 \item{plot_margin}{}
 }
 \value{
 
 }
 \description{
-Title
+A version Tufte theme from \link{ggthemes} with Persian Fonts and rtl support
 }

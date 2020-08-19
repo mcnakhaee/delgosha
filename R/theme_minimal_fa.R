@@ -1,4 +1,4 @@
-#' Title
+#' A minimal ggplot2 theme with Persian fonts and rtl support
 #'
 #' @param base_font
 #' @param base_size
@@ -55,11 +55,10 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
                              legend_color = 'gray40',
                              legend_title_size = 12,
                              legend_position = 'top',
+                             axis_margin = 10,
                              axis_text_size = base_size,
                              axis_title_font = subtitle_font,
                              axis_title_size = 12,
-                             axis_title_face = "plain",
-                             axis_title_just = "rt",
                              plot_margin = margin(30, 30, 30, 30)) {
   thm <-
     ggplot2::theme_minimal(base_family = base_font, base_size = base_size)
@@ -70,20 +69,25 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
       plot.title = element_text(
         family =  plot_title_font,
         hjust = 1,
-        margin = margin(t = plot_title_margin, b =
-                          plot_title_margin)
+        margin = margin(t = plot_title_margin,
+                        b = plot_title_margin)
       ),
       plot.subtitle = element_text(
-        family =  plot_title_font,
+        family =  subtitle_font,
         hjust = 1,
         margin = margin(b = subtitle_margin),
         face = subtitle_face,
+        size = subtitle_size,
         color = '#8e8e93'
       ),
       plot.caption = element_text(
-        family =  plot_title_font,
+        family =  caption_font,
         hjust = 0,
         face = caption_face,
+        size = caption_size,
+        margin = margin(t = caption_margin,
+                        b = caption_margin),
+
         color = '#8e8e93'
       )
     )
@@ -91,17 +95,14 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
 
   thm <-
     thm +  theme(
-      axis.title.y = element_text(margin = margin(
-        t = 0,
-        r = 10,
-        b = 0,
-        l = 0
+      axis.title.y = element_text(family = axis_title_font,
+                                  size = axis_title_size,
+                                  margin = margin(
+        r = axis_margin
       )),
-      axis.title.x = element_text(margin = margin(
-        t = 10,
-        r = 0,
-        b = 0,
-        l = 0
+      axis.title.x = element_text(family = axis_title_font,
+                                  size = axis_title_siz , margin = margin(
+        t = axis_margin
       ))
     )
   thm

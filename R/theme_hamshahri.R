@@ -1,8 +1,4 @@
-
-
-
-
-#' Title
+#' An opinionated ggplot2 theme based on Hamshahri newspaper colors
 #'
 #' @param base_font
 #' @param base_size
@@ -67,10 +63,10 @@ theme_hamshahri <- function(base_font = "A Rooznameh",
                             legend_title_size = 12,
                             legend_position = 'top',
                             axis_text_size = base_size,
+                            axis_margin = 10,
                             axis_title_font = subtitle_font,
                             axis_title_size = 12,
                             axis_title_face = "plain",
-                            axis_title_just = "rt",
                             plot_margin = margin(30, 30, 30, 30),
                             grid_col = "#cccccc",
                             grid = TRUE,

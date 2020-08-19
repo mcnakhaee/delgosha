@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_hamshahri.R
 \name{theme_hamshahri}
 \alias{theme_hamshahri}
-\title{Title}
+\title{An opinionated ggplot2 theme based on Hamshahri newspaper colors}
 \usage{
 theme_hamshahri(
   base_font = "A Rooznameh",
@@ -29,10 +29,10 @@ theme_hamshahri(
   legend_title_size = 12,
   legend_position = "top",
   axis_text_size = base_size,
+  axis_margin = 10,
   axis_title_font = subtitle_font,
   axis_title_size = 12,
   axis_title_face = "plain",
-  axis_title_just = "rt",
   plot_margin = margin(30, 30, 30, 30),
   grid_col = "#cccccc",
   grid = TRUE,
@@ -45,5 +45,5 @@ theme_hamshahri(
 \item{legend_position}{}
 }
 \description{
-Title
+An opinionated ggplot2 theme based on Hamshahri newspaper colors
 }

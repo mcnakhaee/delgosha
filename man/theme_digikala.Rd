@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_digikala.R
 \name{theme_digikala}
 \alias{theme_digikala}
-\title{Title}
+\title{An opinionated ggplot2 theme based on Digikala's used colors and plots}
 \usage{
 theme_digikala(
   base_font = "2  Yekan",
@@ -48,5 +48,5 @@ theme_digikala(
 
 }
 \description{
-Title
+An opinionated ggplot2 theme based on Digikala's used colors and plots
 }

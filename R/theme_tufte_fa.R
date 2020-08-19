@@ -1,9 +1,9 @@
-#' Title
+#' A version Tufte theme from [ggthemes] with Persian Fonts and rtl support
 #'
-#' @param base_font
-#' @param base_size
-#' @param plot_title_font
-#' @param plot_title_size
+#' @param base_font base font family
+#' @param base_size base font size
+#' @param plot_title_font title font family
+#' @param plot_title_size font size
 #' @param plot_title_face
 #' @param plot_title_margin
 #' @param subtitle_font

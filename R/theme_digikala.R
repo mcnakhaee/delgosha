@@ -1,4 +1,4 @@
-#' Title
+#' An opinionated ggplot2 theme based on Digikala's used colors and plots
 #'
 #' @param base_font
 #' @param base_size

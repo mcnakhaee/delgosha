@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_farsh.R
 \name{theme_farsh_fa}
 \alias{theme_farsh_fa}
-\title{Title
+\title{An opinionated ggplot2 theme based based on Persian carpet's colors (farsh means carpet in Persian)
 https://www.roozrang.com/\%d8\%b7\%d8\%b1\%d8\%a7\%d8\%ad\%db\%8c-\%d9\%87\%d9\%88\%db\%8c\%d8\%aa-\%d8\%a8\%d8\%b5\%d8\%b1\%db\%8c-\%d8\%af\%d8\%a7\%db\%8c\%d9\%86\%d8\%a7\%d9\%85\%db\%8c\%da\%a9-\%d9\%85\%d9\%88\%d8\%b2\%d9\%87-\%d9\%81\%d8\%b1\%d8\%b4-\%d8\%aa\%d9\%87\%d8\%b1\%d8\%a7/}
 \usage{
 theme_farsh_fa(
@@ -44,6 +44,6 @@ theme_farsh_fa(
 \item{ticks}{}
 }
 \description{
-Title
+An opinionated ggplot2 theme based based on Persian carpet's colors (farsh means carpet in Persian)
 https://www.roozrang.com/\%d8\%b7\%d8\%b1\%d8\%a7\%d8\%ad\%db\%8c-\%d9\%87\%d9\%88\%db\%8c\%d8\%aa-\%d8\%a8\%d8\%b5\%d8\%b1\%db\%8c-\%d8\%af\%d8\%a7\%db\%8c\%d9\%86\%d8\%a7\%d9\%85\%db\%8c\%da\%a9-\%d9\%85\%d9\%88\%d8\%b2\%d9\%87-\%d9\%81\%d8\%b1\%d8\%b4-\%d8\%aa\%d9\%87\%d8\%b1\%d8\%a7/
 }
