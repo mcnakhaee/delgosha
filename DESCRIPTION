@@ -1,14 +1,13 @@
 Package: delgosha
-Title: What the Package Does (One Line, Title Case)
+Title: An opinionated package with additional RTL ggplot2 themes and palettes for Persian
 Version: 0.1.1
 Authors@R: 
     person(given = "Muhammad",
            family = "Chenariyan Nakhaee",
            role = c("aut", "cre"),
            email = "mcnakhaee@gmail.com")
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: This package is designed to facilitated designing beautiful ggplot2 plots in rtl languages such as Persian and Arabic
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
