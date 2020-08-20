@@ -60,8 +60,8 @@ theme_fa <- function(base_font = "Nahid FD",
                              axis_title_size = 12,
                              plot_margin = margin(30, 30, 30, 30)) {
 
-  thm <-
-    thm + theme(
+
+  thm <- theme(
       text = element_text(family = base_font,size = base_size),
       plot.title = element_text(
         family =  plot_title_font,
@@ -98,7 +98,7 @@ theme_fa <- function(base_font = "Nahid FD",
                                     r = axis_margin
                                   )),
       axis.title.x = element_text(family = axis_title_font,
-                                  size = axis_title_siz , margin = margin(
+                                  size = axis_title_size , margin = margin(
                                     t = axis_margin
                                   ))
     )

@@ -101,7 +101,7 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
         r = axis_margin
       )),
       axis.title.x = element_text(family = axis_title_font,
-                                  size = axis_title_siz , margin = margin(
+                                  size = axis_title_size , margin = margin(
         t = axis_margin
       ))
     )
