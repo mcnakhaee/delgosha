@@ -2,10 +2,18 @@
 title: "Delgosha"
 output: github_document
 ---
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+library(delgosha)
+import_hamshahri()
+import_vazir()
+import_yekan()
+```
 
 ### Installation
 
-```{r eval = FALSE}
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 remotes::install_github('mcnakhaee/delgosha')
 ```
 
@@ -15,7 +23,7 @@ remotes::install_github('mcnakhaee/delgosha')
 
 #### Farsh theme
 
-```{r fig.height= 5, fig.width=10}
+```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE }
 library(delgosha)
 library(tidyverse)
 
@@ -38,7 +46,7 @@ spotify %>%
 
 #### Hamshahri theme
 
-```{r eval = TRUE}
+```{r eval=TRUE, message=FALSE, warning=FALSE}
 factnameh <- dadegan::factnameh
 tags_count <- factnameh %>%
   count(tags, sort = TRUE) %>%
@@ -61,7 +69,7 @@ tags_count %>%
 
 There is also modern version of Hamshari's theme which can be used by `theme_hamshahri_modern` function.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 tags_count %>%
   ggplot(aes(fct_reorder(tags, n), n)) +
   geom_col() +
@@ -78,7 +86,7 @@ tags_count %>%
 
 #### Digikala theme
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 books <- dadegan::books
 
 books %>%
