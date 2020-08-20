@@ -19,5 +19,3 @@ There is also modern version of Hamshari’s theme which can be used by
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 #### Digikala theme
-
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->

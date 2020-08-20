@@ -86,7 +86,7 @@ tags_count %>%
 
 #### Digikala theme
 
-```{r, message=FALSE, warning=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 books <- dadegan::books
 
 books %>%
