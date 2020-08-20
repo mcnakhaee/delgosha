@@ -40,7 +40,7 @@ spotify %>%
        color = '') +
   facet_wrap(~artist_name_farsi) +
   scale_color_farsh() +
-  theme_farsh_fa()
+theme_farsh_fa()
 ```
 
 
