@@ -5,25 +5,34 @@ output: github_document
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
 library(delgosha)
-import_hamshahri()
-import_vazir()
-import_yekan()
+import_all_fonts()
 ```
 
-### Installation
+Delgosha is an opinionated package which aims to provide some ggplot2 functionality themes for RTL languages and specifically Persian. 
 
+## Installation
 
-```{r eval=FALSE, message=FALSE, warning=FALSE}
+The package is not currently available on CRAN but you can install the package using the following line of code:
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
 remotes::install_github('mcnakhaee/delgosha')
 ```
 
 
-### Basic Usage
+## Usage
+The package includes three types of functions:
 
+functions that start with `theme_` change the theme of the ggplot2 visualization. At the moment the following themes are included in the package: 
+
+functions that start with `import_` import necessary fonts for each theme included in the package.
+
+functions for palettes like many ggplot2 existing palettes start with `scale_`.
+
+### Themes
 
 #### Farsh theme
 
-```{r fig.height=5, fig.width=10, message=FALSE, warning=FALSE }
+```{r fig.height=5, fig.width=7, message=FALSE, warning=FALSE }
 library(delgosha)
 library(tidyverse)
 
@@ -45,8 +54,9 @@ theme_farsh_fa()
 
 
 #### Hamshahri theme
+Based on the main colors of Hamshahri news logo, I designed a theme for ggplot2. Note that this theme does not necessarily represent plots shown in Hamshahri (if such plots even exist!).
 
-```{r eval=TRUE, message=FALSE, warning=FALSE}
+```{r fig.height=5, fig.width=7, message=FALSE, warning=FALSE }
 factnameh <- dadegan::factnameh
 tags_count <- factnameh %>%
   count(tags, sort = TRUE) %>%
@@ -69,7 +79,7 @@ tags_count %>%
 
 There is also modern version of Hamshari's theme which can be used by `theme_hamshahri_modern` function.
 
-```{r message=FALSE, warning=FALSE}
+```{r fig.height=5, fig.width=7, message=FALSE, warning=FALSE }
 tags_count %>%
   ggplot(aes(fct_reorder(tags, n), n)) +
   geom_col() +
@@ -86,18 +96,59 @@ tags_count %>%
 
 #### Digikala theme
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-books <- dadegan::books
+Based on the characteristics of plots used in their annual report I designed the following theme. Note that probably in the original Digikala's plots, the IranSans font is used which requires a proprietary license. So, I used the Yekan font in this theme.
 
-books %>%
-  #count(turn_published)
-  mutate(page_num = as.numeric(page_num)) %>% 
-  filter(page_num < 10000) %>% 
-  ggplot(aes(x = page_num)) +
-  geom_histogram(alpha = 0.5,bins = 100) +
-  labs(x = 'تعداد صفحات',
-       y = 'فراوانی',
-       title = 'فراوانی تعداد صفحات کتاب های چاپ شده در ایران') +
+```{r fig.height=5, fig.width=7, message=FALSE, warning=FALSE }
+tags_count %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین  تعداد  مقالات درستی سنجی شده',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.',
+    caption = 'منبع: وبسایت فکت نامه'
+  ) +
   theme_digikala()
 ```
+
+
+```{r}
+library(ggalt)
+library(Shafaf)
+journalists_traffic_pass %>% 
+  count(`نام رسانه/ تشکل`, year,sort = TRUE) %>% 
+  slice(1:20) %>% 
+  ggplot(aes(x = `نام رسانه/ تشکل`, y = n,fill = `نام رسانه/ تشکل` )) +
+  geom_col(show.legend = FALSE) +
+  coord_flip()+
+  facet_wrap(~ year) +
+  theme_minimal_fa()
+```
+
+```{r eval=FALSE, include=FALSE}
+library(ggthemes)
+```
+```{r eval=FALSE, fig.height=10, fig.width=10, message=FALSE, warning=TRUE, include=FALSE}
+library(quRan)
+
+library(ggwordcloud)
+library(tidytext)
+quran_ar %>% 
+  unnest_tokens(word,text) %>% 
+  count(word,sort = TRUE) %>%
+  slice(1:200) %>% 
+  ggplot(aes(label = word,size = n)) +
+  geom_text_wordcloud(family = 'Aljazeera') +
+  theme_aljazeera()
+
+```
+### Fonts
+
+Each theme uses a font which you might not have on your computer. If you don't have these fonts installed on your machine or loaded in your R session the plots will become ugly. So, first you need to install the fonts on your computer. you can run `import_{font_name}` functions to find where the fonts in the package are stored and install theme. After installing these fonts you can run `import_{font_name}` functions again to load the fonts into your R session.
+
+
+### Issues
+
 
