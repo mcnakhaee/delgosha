@@ -65,6 +65,9 @@ import_yekan <- function() {
   if (.Platform$OS.type == "windows") {
     myFont <- "2  Yekan"
     windowsFonts(`2  Yekan` = myFont)
+    myFont <- "WeblogmaYekan"
+    windowsFonts(`WeblogmaYekan` = myFont)
+
   }
   message(
     sprintf(
@@ -98,6 +101,12 @@ import_aljazeera <- function() {
 }
 
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_nika <- function() {
   nika_font_dir <- system.file("fonts", "Aljazeera", package = "delgosha")
 
@@ -162,4 +171,22 @@ import_samim <- function() {
       samim_font_dir
     )
   )
+}
+
+
+#' Import all fonts
+#'
+#' @return
+#' @export
+#'
+#' @examples
+import_all_fonts <- function(){
+
+  import_aljazeera()
+  import_hamshahri()
+  import_nahid()
+  import_nika()
+  import_samim()
+  import_vazir()
+  import_yekan()
 }

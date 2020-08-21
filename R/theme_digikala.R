@@ -39,9 +39,9 @@
 #' @export
 #'
 #' @examples
-theme_digikala <- function(base_font = "2  Yekan",
+theme_digikala <- function(base_font = "WeblogmaYekan",
                            base_size = 12.5,
-                           plot_title_font = "2  Yekan",
+                           plot_title_font = "WeblogmaYekan",
                            plot_title_size = 30,
                            plot_title_face = "bold",
                            plot_title_margin = 10,
@@ -57,7 +57,7 @@ theme_digikala <- function(base_font = "2  Yekan",
                            caption_size = 9,
                            caption_face = "italic",
                            caption_margin = 10,
-                           legend_font = "2  Yekan",
+                           legend_font = "WeblogmaYekan",
                            legend_font_size = 10,
                            legend_color = '#76787A',
                            legend_title_size = 12,
