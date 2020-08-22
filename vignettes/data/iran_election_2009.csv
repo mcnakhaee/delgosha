@@ -1,0 +1,151 @@
+province,candidate,mean_percentage_votes,share_votes,candidate_name_fa,row,col,code,name_farsi
+Ardabil,ahmadinejad,55.57773054370597,55,احمدی نژاد,1,4,AR,اردبیل
+Ardabil,karrubi,0.44014338919462104,0,کروبی,1,4,AR,اردبیل
+Ardabil,mousavi,42.683532197912896,42,موسوی,1,4,AR,اردبیل
+Ardabil,rezai,0.6908515351725987,0,رضائی,1,4,AR,اردبیل
+Ardabil,voided_votes,0.6077423340139176,0,آرای باطله,1,4,AR,اردبیل
+Bushehr,ahmadinejad,63.11709681556409,63,احمدی نژاد,7,4,BS,بوشهر
+Bushehr,karrubi,0.6494140202448924,0,کروبی,7,4,BS,بوشهر
+Bushehr,mousavi,33.627012234035796,33,موسوی,7,4,BS,بوشهر
+Bushehr,rezai,1.564253234251447,1,رضائی,7,4,BS,بوشهر
+Bushehr,voided_votes,1.0422236959037718,1,آرای باطله,7,4,BS,بوشهر
+Chaharmahal and Bakhtiari,ahmadinejad,72.26552595148071,72,احمدی نژاد,5,4,CM,چهارمحال و بختیاری
+Chaharmahal and Bakhtiari,karrubi,0.5845640337295661,0,کروبی,5,4,CM,چهارمحال و بختیاری
+Chaharmahal and Bakhtiari,mousavi,19.415078937830366,19,موسوی,5,4,CM,چهارمحال و بختیاری
+Chaharmahal and Bakhtiari,rezai,7.18211337415334,7,رضائی,5,4,CM,چهارمحال و بختیاری
+Chaharmahal and Bakhtiari,voided_votes,0.5527177028060208,0,آرای باطله,5,4,CM,چهارمحال و بختیاری
+East Azerbijan,ahmadinejad,61.53336904719841,61,احمدی نژاد,1,3,EA,آذربایجان شرقی
+East Azerbijan,karrubi,0.34084971047081997,0,کروبی,1,3,EA,آذربایجان شرقی
+East Azerbijan,mousavi,36.689279635735524,36,موسوی,1,3,EA,آذربایجان شرقی
+East Azerbijan,rezai,0.6115414052401836,0,رضائی,1,3,EA,آذربایجان شرقی
+East Azerbijan,voided_votes,0.8249602013550568,0,آرای باطله,1,3,EA,آذربایجان شرقی
+Esfahan,ahmadinejad,73.99295276636073,73,احمدی نژاد,5,5,ES,اصفهان
+Esfahan,karrubi,0.44134333705386297,0,کروبی,5,5,ES,اصفهان
+Esfahan,mousavi,23.04296847498431,23,موسوی,5,5,ES,اصفهان
+Esfahan,rezai,1.5744608451406243,1,رضائی,5,5,ES,اصفهان
+Esfahan,voided_votes,0.9481885469626747,0,آرای باطله,5,5,ES,اصفهان
+Fars,ahmadinejad,75.24199257209895,75,احمدی نژاد,6,5,FA,فارس
+Fars,karrubi,0.5891648952172365,0,کروبی,6,5,FA,فارس
+Fars,mousavi,22.811336582402017,22,موسوی,6,5,FA,فارس
+Fars,rezai,0.73055529651396,0,رضائی,6,5,FA,فارس
+Fars,voided_votes,0.6264306690207185,0,آرای باطله,6,5,FA,فارس
+Gilan,ahmadinejad,70.59998420690809,70,احمدی نژاد,2,4,GI,گیلان
+Gilan,karrubi,0.3963120255460473,0,کروبی,2,4,GI,گیلان
+Gilan,mousavi,27.456780191821995,27,موسوی,2,4,GI,گیلان
+Gilan,rezai,0.7096641605552055,0,رضائی,2,4,GI,گیلان
+Gilan,voided_votes,0.8372594151686601,0,آرای باطله,2,4,GI,گیلان
+Golestan,ahmadinejad,58.380458664165666,58,احمدی نژاد,2,6,GO,گلستان
+Golestan,karrubi,1.3839115049703692,1,کروبی,2,6,GO,گلستان
+Golestan,mousavi,38.12818962252097,38,موسوی,2,6,GO,گلستان
+Golestan,rezai,0.5963985457934802,0,رضائی,2,6,GO,گلستان
+Golestan,voided_votes,2.0272809637377067,2,آرای باطله,2,6,GO,گلستان
+Hamedan,ahmadinejad,78.40975105318869,78,احمدی نژاد,4,4,HD,همدان
+Hamedan,karrubi,1.3451504081262415,1,کروبی,4,4,HD,همدان
+Hamedan,mousavi,18.34705903207283,18,موسوی,4,4,HD,همدان
+Hamedan,rezai,1.036681377192075,1,رضائی,4,4,HD,همدان
+Hamedan,voided_votes,0.8613581294201702,0,آرای باطله,4,4,HD,همدان
+Hormozgan,ahmadinejad,58.08612821641086,58,احمدی نژاد,7,5,HG,هرمزگان
+Hormozgan,karrubi,0.9296784144496011,0,کروبی,7,5,HG,هرمزگان
+Hormozgan,mousavi,35.89301846854853,35,موسوی,7,5,HG,هرمزگان
+Hormozgan,rezai,2.22036663621304,2,رضائی,7,5,HG,هرمزگان
+Hormozgan,voided_votes,0.7348283665119745,0,آرای باطله,7,5,HG,هرمزگان
+Ilam,ahmadinejad,67.32722970058681,67,احمدی نژاد,4,2,IL,ایلام
+Ilam,karrubi,2.5634536094032825,2,کروبی,4,2,IL,ایلام
+Ilam,mousavi,27.63613844595426,27,موسوی,4,2,IL,ایلام
+Ilam,rezai,1.420471443553507,1,رضائی,4,2,IL,ایلام
+Ilam,voided_votes,1.052706800502144,1,آرای باطله,4,2,IL,ایلام
+Kerman,ahmadinejad,83.25613790595085,83,احمدی نژاد,6,6,KE,کرمان
+Kerman,karrubi,0.1897316823350535,0,کروبی,6,6,KE,کرمان
+Kerman,mousavi,15.49180003129068,15,موسوی,6,6,KE,کرمان
+Kerman,rezai,0.5325606450490742,0,رضائی,6,6,KE,کرمان
+Kerman,voided_votes,0.5297697353743398,0,آرای باطله,6,6,KE,کرمان
+Kermanshah,ahmadinejad,55.06493150978131,55,احمدی نژاد,3,2,BK,کرمانشاه
+Kermanshah,karrubi,1.8238614124730181,1,کروبی,3,2,BK,کرمانشاه
+Kermanshah,mousavi,40.077672814257056,40,موسوی,3,2,BK,کرمانشاه
+Kermanshah,rezai,1.1152944453469447,1,رضائی,3,2,BK,کرمانشاه
+Kermanshah,voided_votes,1.9182398181416744,1,آرای باطله,3,2,BK,کرمانشاه
+Khuzesan,ahmadinejad,66.13104589537059,66,احمدی نژاد,5,3,KZ,خوزستان
+Khuzesan,karrubi,0.7765535985634962,0,کروبی,5,3,KZ,خوزستان
+Khuzesan,mousavi,21.729108954254716,21,موسوی,5,3,KZ,خوزستان
+Khuzesan,rezai,9.989805445046697,9,رضائی,5,3,KZ,خوزستان
+Khuzesan,voided_votes,1.3734861067644981,1,آرای باطله,5,3,KZ,خوزستان
+Kohgiluyeh and Boyer-Ahmad,ahmadinejad,70.5381116617275,70,احمدی نژاد,6,4,KB,کهگیلویه و بویراحمد
+Kohgiluyeh and Boyer-Ahmad,karrubi,1.1977509647044806,1,کروبی,6,4,KB,کهگیلویه و بویراحمد
+Kohgiluyeh and Boyer-Ahmad,mousavi,25.476294326230192,25,موسوی,6,4,KB,کهگیلویه و بویراحمد
+Kohgiluyeh and Boyer-Ahmad,rezai,2.0939277411146984,2,رضائی,6,4,KB,کهگیلویه و بویراحمد
+Kohgiluyeh and Boyer-Ahmad,voided_votes,0.591109663234973,0,آرای باطله,6,4,KB,کهگیلویه و بویراحمد
+Kurdistan,ahmadinejad,52.59614068310485,52,احمدی نژاد,2,2,KD,کردستان
+Kurdistan,karrubi,2.391121604286618,2,کروبی,2,2,KD,کردستان
+Kurdistan,mousavi,41.877242200337655,41,موسوی,2,2,KD,کردستان
+Kurdistan,rezai,1.098479967868504,1,رضائی,2,2,KD,کردستان
+Kurdistan,voided_votes,2.0367999760564284,2,آرای باطله,2,2,KD,کردستان
+Lorestan,ahmadinejad,71.23229576740155,71,احمدی نژاد,4,3,LO,لرستان
+Lorestan,karrubi,5.601366218903184,5,کروبی,4,3,LO,لرستان
+Lorestan,mousavi,20.686950526045244,20,موسوی,4,3,LO,لرستان
+Lorestan,rezai,1.6892808979616423,1,رضائی,4,3,LO,لرستان
+Lorestan,voided_votes,0.7901065896883712,0,آرای باطله,4,3,LO,لرستان
+Markazi,ahmadinejad,76.91588939870114,76,احمدی نژاد,4,5,MK,مرکزی
+Markazi,karrubi,0.4588224927828378,0,کروبی,4,5,MK,مرکزی
+Markazi,mousavi,20.677556002378036,20,موسوی,4,5,MK,مرکزی
+Markazi,rezai,1.0610962169784781,1,رضائی,4,5,MK,مرکزی
+Markazi,voided_votes,0.8856529464912694,0,آرای باطله,4,5,MK,مرکزی
+Mazandaran,ahmadinejad,67.77760961088377,67,احمدی نژاد,2,5,MN,مازندران
+Mazandaran,karrubi,0.5483329162163486,0,کروبی,2,5,MN,مازندران
+Mazandaran,mousavi,29.92048940299231,29,موسوی,2,5,MN,مازندران
+Mazandaran,rezai,0.9690453940721588,0,رضائی,2,5,MN,مازندران
+Mazandaran,voided_votes,0.7845226758354097,0,آرای باطله,2,5,MN,مازندران
+North Khorasan,ahmadinejad,77.87683416777388,77,احمدی نژاد,2,7,KS,خراسان شمالی
+North Khorasan,karrubi,0.4503922615735716,0,کروبی,2,7,KS,خراسان شمالی
+North Khorasan,mousavi,20.2152637895486,20,موسوی,2,7,KS,خراسان شمالی
+North Khorasan,rezai,0.7640469827056658,0,رضائی,2,7,KS,خراسان شمالی
+North Khorasan,voided_votes,0.6934627983982807,0,آرای باطله,2,7,KS,خراسان شمالی
+Qazvin,ahmadinejad,74.1217951283149,74,احمدی نژاد,3,3,QZ,قزوین
+Qazvin,karrubi,0.31505621656800703,0,کروبی,3,3,QZ,قزوین
+Qazvin,mousavi,23.816009684839127,23,موسوی,3,3,QZ,قزوین
+Qazvin,rezai,0.9564672524361438,0,رضائی,3,3,QZ,قزوین
+Qazvin,voided_votes,0.7906717178418186,0,آرای باطله,3,3,QZ,قزوین
+Qom,ahmadinejad,70.52233573717949,70,احمدی نژاد,4,6,QM,قم
+Qom,karrubi,0.3862847222222222,0,کروبی,4,6,QM,قم
+Qom,mousavi,24.784154647435898,24,موسوی,4,6,QM,قم
+Qom,rezai,2.720519497863248,2,رضائی,4,6,QM,قم
+Qom,voided_votes,1.5867053952991452,1,آرای باطله,4,6,QM,قم
+Razavi Khorasan,ahmadinejad,75.08260192618037,75,احمدی نژاد,3,7,KV,خراسان رضوی
+Razavi Khorasan,karrubi,0.3615030422314059,0,کروبی,3,7,KV,خراسان رضوی
+Razavi Khorasan,mousavi,23.176361340825625,23,موسوی,3,7,KV,خراسان رضوی
+Razavi Khorasan,rezai,0.8316669477938389,0,رضائی,3,7,KV,خراسان رضوی
+Razavi Khorasan,voided_votes,0.5475650787880331,0,آرای باطله,3,7,KV,خراسان رضوی
+Semnan,ahmadinejad,77.31699691619562,77,احمدی نژاد,3,6,SM,سمنان
+Semnan,karrubi,0.5548909589419978,0,کروبی,3,6,SM,سمنان
+Semnan,mousavi,20.031236234076392,20,موسوی,3,6,SM,سمنان
+Semnan,rezai,1.1410914608141607,1,رضائی,3,6,SM,سمنان
+Semnan,voided_votes,0.9557844299718202,0,آرای باطله,3,6,SM,سمنان
+Sistan and Baluchestan,ahmadinejad,45.97962863699983,45,احمدی نژاد,6,7,SB,سیستان و بلوچستان
+Sistan and Baluchestan,karrubi,1.286112747495163,1,کروبی,6,7,SB,سیستان و بلوچستان
+Sistan and Baluchestan,mousavi,51.72288126234955,51,موسوی,6,7,SB,سیستان و بلوچستان
+Sistan and Baluchestan,rezai,0.5318927097377254,0,رضائی,6,7,SB,سیستان و بلوچستان
+Sistan and Baluchestan,voided_votes,0.479484643417731,0,آرای باطله,6,7,SB,سیستان و بلوچستان
+South Khorasan,ahmadinejad,76.5699255105553,76,احمدی نژاد,4,7,KJ,خراسان جنوبی
+South Khorasan,karrubi,0.21450152249805116,0,کروبی,4,7,KJ,خراسان جنوبی
+South Khorasan,mousavi,21.99844166087252,21,موسوی,4,7,KJ,خراسان جنوبی
+South Khorasan,rezai,0.7738879687335396,0,رضائی,4,7,KJ,خراسان جنوبی
+South Khorasan,voided_votes,0.44324333734059,0,آرای باطله,4,7,KJ,خراسان جنوبی
+Tehran,ahmadinejad,61.7584757771174,61,احمدی نژاد,3,5,TE,تهران
+Tehran,karrubi,0.7892808259910578,0,کروبی,3,5,TE,تهران
+Tehran,mousavi,34.5302698823233,34,موسوی,3,5,TE,تهران
+Tehran,rezai,1.437963061006256,1,رضائی,3,5,TE,تهران
+Tehran,voided_votes,1.4840104535619802,1,آرای باطله,3,5,TE,تهران
+West Azerbijan,ahmadinejad,43.568913649919004,43,احمدی نژاد,1,2,WA,آذربایجان غربی
+West Azerbijan,karrubi,2.141475686112146,2,کروبی,1,2,WA,آذربایجان غربی
+West Azerbijan,mousavi,51.535200110409406,51,موسوی,1,2,WA,آذربایجان غربی
+West Azerbijan,rezai,0.9522299130416869,0,رضائی,1,2,WA,آذربایجان غربی
+West Azerbijan,voided_votes,1.8021806405177567,1,آرای باطله,1,2,WA,آذربایجان غربی
+Yazd,ahmadinejad,63.00662468829365,63,احمدی نژاد,5,6,YA,یزد
+Yazd,karrubi,0.29044422547962867,0,کروبی,5,6,YA,یزد
+Yazd,mousavi,34.80540752694718,34,موسوی,5,6,YA,یزد
+Yazd,rezai,1.0596740430969755,1,رضائی,5,6,YA,یزد
+Yazd,voided_votes,0.8378495161825685,0,آرای باطله,5,6,YA,یزد
+Zanjan,ahmadinejad,79.41058285479969,79,احمدی نژاد,2,3,ZA,زنجان
+Zanjan,karrubi,0.33370648697040517,0,کروبی,2,3,ZA,زنجان
+Zanjan,mousavi,18.69431858782906,18,موسوی,2,3,ZA,زنجان
+Zanjan,rezai,0.8530388294272359,0,رضائی,2,3,ZA,زنجان
+Zanjan,voided_votes,0.7083532409736082,0,آرای باطله,2,3,ZA,زنجان
