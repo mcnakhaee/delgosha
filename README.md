@@ -1,44 +1,120 @@
 Delgosha
 ================
 
-Delgosha is an opinionated package which aims to provide some ggplot2
-functionality themes for RTL languages and specifically Persian.
+Delgosha is an opinionated package which aims to provide a collection of
+ggplot2 themes for RTL languages (mostly Persian).
 
 ## Installation
 
 The package is not currently available on CRAN but you can install the
 package using the following line of code:
 
+``` r
+remotes::install_github('mcnakhaee/delgosha')
+```
+
 ## Usage
 
 The package includes three types of functions:
 
-functions that start with `theme_` change the theme of the ggplot2
-visualization. At the moment the following themes are included in the
-package:
+  - functions that start with `theme_` change the theme of the ggplot2
+    visualization. At the moment the following themes are included in
+    the package:
 
-functions that start with `import_` import necessary fonts for each
-theme included in the package.
+  - functions that start with `import_` import necessary fonts for each
+    theme included in the package.
 
-functions for palettes like many ggplot2 existing palettes start with
-`scale_`.
+  - functions for palettes like many ggplot2 existing palettes start
+    with `scale_`.
 
 ### Themes
 
-#### Farsh theme
+The current list of themes include:
+
+`theme_farsh_fa`
+
+`theme_hamshahri`
+
+`theme_hamshahri_modern`
+
+`theme_digikala`
+
+`theme_minimal_fa`
+
+`theme_fa`
+
+#### Examples
+
+##### An example of farsh theme:
+
+``` r
+library(delgosha)
+library(tidyverse)
+
+spotify <- dadegan::spotify
+spotify %>% 
+  filter(artist_name %in% c('Alireza Eftekhari','Mohammadreza Shajarian','Alireza Ghorbani')) %>% 
+  ggplot((aes(valence,popularity,color = artist_name_farsi))) +
+  geom_point(alpha = 0.6,size = 3) +
+  labs(x = 'شادی',
+       y = 'محبوبیت',
+       title = 'مقایسه ای بین محبوبیت و شادی آهنگ های سه خواننده محبوب سنتی',
+       subtitle = '',
+       caption =  'مصورسازی: محمد چناریان نخعی',
+       color = '') +
+  facet_wrap(~artist_name_farsi) +
+  scale_color_farsh() +
+theme_farsh_fa()
+```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-#### Hamshahri theme
+##### Hamshahri theme
 
 Based on the main colors of Hamshahri news logo, I designed a theme for
 ggplot2. Note that this theme does not necessarily represent plots shown
 in Hamshahri (if such plots even exist\!).
 
+``` r
+factnameh <- dadegan::factnameh
+tags_count <- factnameh %>%
+  count(tags, sort = TRUE) %>%
+  filter(!is.na(tags)) %>%
+  slice(1:10) 
+
+
+tags_count %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین تعداد درستی سنجی',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.'
+  ) +
+  theme_hamshahri()
+```
+
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 There is also modern version of Hamshari’s theme which can be used by
 `theme_hamshahri_modern` function.
+
+``` r
+tags_count %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین  تعداد  مقالات درستی سنجی شده',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.',
+    caption = 'منبع: وبسایت فکت نامه'
+  ) +
+  theme_hamshahri_modern()
+```
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
@@ -49,9 +125,129 @@ designed the following theme. Note that probably in the original
 Digikala’s plots, the IranSans font is used which requires a proprietary
 license. So, I used the Yekan font in this theme.
 
+``` r
+tags_count %>%
+  ggplot(aes(fct_reorder(tags, n), n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = '',
+    y = '',
+    title = 'موضوعات با بیشترین  تعداد  مقالات درستی سنجی شده',
+    subtitle = 'بیشترین برچسب هایی که در مقالات درستی سنجی وبسایت فکت نامه مورد استفاده قرار  گرفته اند.',
+    caption = 'منبع: وبسایت فکت نامه'
+  ) +
+  theme_digikala()
+```
+
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
+``` r
+library(Shafaf)
+library(ggthemes)
+
+research_studies %>% 
+  count(`نام سازمان`, sort = TRUE) %>% 
+  slice(1:10) %>% 
+  ggplot(aes(x = `نام سازمان`, y = n ,fill = `نام سازمان` )) +
+  geom_col(alpha = 0.5,show.legend = FALSE) +
+  labs(title = 'سازمان های شهرداری با بیشترین تعداد پروژه تحقیقاتی',
+       y = 'تعداد',
+       caption = 'منبع: سایت شفاف شهرداری تهران') +
+  scale_fill_tableau() +
+  coord_flip()+
+  theme_minimal_fa()
+```
+
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+#### `theme_fa`
+
+This theme can transform existing ggplot2 themes to a Persian theme.
+
+``` r
+library(waffle)
+colors <- c(
+   'ahmadinejad' = '#F94144',
+  'karrubi' = '#9c89b8',
+  'mousavi' = '#43AA8B',
+  'rezai' = '#577590',
+  'voided_votes' = '#F3722C'
+)
+
+iran_election_2009 %>%
+  ggplot(aes(fill = candidate, values = share_votes)) +
+  geom_waffle(
+    n_rows = 10,
+    size = 2,
+    make_proportional = TRUE,
+    color = 'white',
+    flip = TRUE
+  ) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_y_discrete(expand = c(0, 0)) +
+  scale_fill_manual(
+    values = colors,
+    labels = c('احمدی نژاد',
+               'کروبی',
+               'موسوی',
+               'رضائی',
+               'آرای باطله')
+  ) +
+  labs(title = 'سهم رای کاندیدهای ریاست جمهوری در انتخابات سال 88',
+       fill = '') +
+  facet_wrap(~ name_farsi) +
+  theme_void() +
+  theme_fa(
+    strip_text_size = 25,
+    plot_title_size = 35,
+    plot_title_margin = 20
+  ) +
+  theme(
+    plot.margin = margin(30, 30, 30, 30),
+    legend.position = 'top',
+    legend.text = element_text(size = 25, margin = margin(b = 10)),
+    strip.text = element_text(margin = margin(t = 10, b = 10)),
+    panel.spacing.x = unit(2, "lines"),
+    panel.spacing.y = unit(2, "lines")
+  )
+```
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+#### Aljazeera theme
+
+Based on Aljazeera’s font. s
+
+``` r
+library(quRan)
+```
+
+    ## Warning: package 'quRan' was built under R version 3.6.3
+
+``` r
+library(ggwordcloud)
+```
+
+    ## Warning: package 'ggwordcloud' was built under R version 3.6.3
+
+``` r
+library(tidytext)
+quran_ar %>% 
+  unnest_tokens(word,text) %>% 
+  count(word,revelation_type,sort = TRUE) %>%
+  slice(1:200) %>% 
+  mutate(revelation_type = plyr::mapvalues(revelation_type,c('Medinan','Meccan'),c('مدني',
+                                                                 'مكي'))) %>% 
+  ggplot(aes(label = word,size = n,color = revelation_type)) +
+  geom_text_wordcloud(family = 'Aljazeera') +
+  scale_size_area(max_size = 15) +
+  facet_wrap(~revelation_type) + 
+  labs(title = 'سحابة كلمات في القرآن') + 
+  theme_aljazeera()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ### Fonts
 
@@ -63,4 +259,22 @@ find where the fonts in the package are stored and install theme. After
 installing these fonts you can run `import_{font_name}` functions again
 to load the fonts into your R session.
 
-### Issues
+For instance, you can load the vazir font used in farsh theme using the
+following function:
+
+``` r
+import_vazir()
+```
+
+Alternatively, you can import all fonts with the `import_all_fonts()`
+function.
+
+### Issues and improvements
+
+If you have found an issue you can send an email to
+<mcnakhaee@gmail.com> or you can open an issue in the package’s github
+repository.
+
+### License
+
+This package is distributed under MIT License.

@@ -3,7 +3,7 @@ title: "Delgosha"
 output: github_document
 ---
 ```{r include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set( message=FALSE, warning=FALSE)
 library(delgosha)
 import_all_fonts()
 ```
@@ -15,7 +15,7 @@ Delgosha is an opinionated package which aims to provide a collection of ggplot2
 
 The package is not currently available on CRAN but you can install the package using the following line of code:
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+```{r eval=FALSE, include=TRUE}
 remotes::install_github('mcnakhaee/delgosha')
 ```
 
@@ -24,20 +24,26 @@ remotes::install_github('mcnakhaee/delgosha')
 
 The package includes three types of functions:
 
-functions that start with `theme_` change the theme of the ggplot2 visualization. At the moment the following themes are included in the package: 
+- functions that start with `theme_` change the theme of the ggplot2 visualization. At the moment the following themes are included in the package: 
 
-functions that start with `import_` import necessary fonts for each theme included in the package.
+- functions that start with `import_` import necessary fonts for each theme included in the package.
 
-functions for palettes like many ggplot2 existing palettes start with `scale_`.
+- functions for palettes like many ggplot2 existing palettes start with `scale_`.
+
 
 ### Themes
 The current list of themes include:
 
 `theme_farsh_fa`
+
 `theme_hamshahri`
+
 `theme_hamshahri_modern`
+
 `theme_digikala`
+
 `theme_minimal_fa`
+
 `theme_fa`
 
 #### Examples
@@ -111,7 +117,7 @@ tags_count %>%
 
 Based on the characteristics of plots used in their annual report I designed the following theme. Note that probably in the original Digikala's plots, the IranSans font is used which requires a proprietary license. So, I used the Yekan font in this theme.
 
-```{r fig.height=5, fig.width=7, message=FALSE, warning=FALSE , dpi=1000}
+```{r echo=TRUE, fig.height=5, fig.width=7, message=FALSE, warning=FALSE, dpi=1000}
 tags_count %>%
   ggplot(aes(fct_reorder(tags, n), n)) +
   geom_col() +
@@ -127,16 +133,20 @@ tags_count %>%
 ```
 
 
-```{r, dpi=1000}
-library(ggalt)
+```{r echo=TRUE, dpi=1000}
 library(Shafaf)
-journalists_traffic_pass %>% 
-  count(`نام رسانه/ تشکل`, year,sort = TRUE) %>% 
-  slice(1:20) %>% 
-  ggplot(aes(x = `نام رسانه/ تشکل`, y = n,fill = `نام رسانه/ تشکل` )) +
-  geom_col(show.legend = FALSE) +
+library(ggthemes)
+
+research_studies %>% 
+  count(`نام سازمان`, sort = TRUE) %>% 
+  slice(1:10) %>% 
+  ggplot(aes(x = `نام سازمان`, y = n ,fill = `نام سازمان` )) +
+  geom_col(alpha = 0.5,show.legend = FALSE) +
+  labs(title = 'سازمان های شهرداری با بیشترین تعداد پروژه تحقیقاتی',
+       y = 'تعداد',
+       caption = 'منبع: سایت شفاف شهرداری تهران') +
+  scale_fill_tableau() +
   coord_flip()+
-  facet_wrap(~ year) +
   theme_minimal_fa()
 ```
 
@@ -144,7 +154,7 @@ journalists_traffic_pass %>%
 
 This theme can transform existing ggplot2 themes to a Persian theme.
 
-```{r fig.height=25,fig.width=25, dpi=1000}
+```{r, fig.height=25,fig.width=25}
 library(waffle)
 colors <- c(
    'ahmadinejad' = '#F94144',
@@ -196,9 +206,9 @@ iran_election_2009 %>%
 
 #### Aljazeera theme
 
-Based on Aljazeera's f
+Based on Aljazeera's font.
 
-```{r eval=FALSE,  message=FALSE, warning=TRUE, include=FALSE, dpi=1000}
+```{r,   message=FALSE, warning=TRUE, dpi=1000}
 library(quRan)
 library(ggwordcloud)
 library(tidytext)
@@ -224,13 +234,13 @@ Each theme uses a font which you might not have on your computer. If you don't h
 
 For instance, you can load the vazir font used in farsh theme using the following function:
 
-```{r}
+```{r eval=FALSE}
 import_vazir()
 ```
 
 Alternatively, you can import all fonts with the `import_all_fonts()` function.
 
-### Issues adn improvements
+### Issues and improvements
 
 If you have found an issue you can send an email to mcnakhaee@gmail.com or you can open an issue in the package's github repository.
 
