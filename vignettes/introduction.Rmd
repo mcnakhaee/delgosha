@@ -69,4 +69,103 @@ factnameh %>%
 ```
 
 
+
+
+
 ### Fonts
+
+
+```{r eval=FALSE, include=FALSE}
+
+colors <- c(
+  'احمدی نژاد' =   '#F94144',
+  'کروبی' =         '#F94144',
+  'موسوی' =   '#F94144',
+  'رضائی' =   '#F94144',
+  'آرای باطله' =   '#F94144'
+  
+)
+grid <- read_csv('data/iran_provinces.csv')
+iran_2009_election <- read_csv('data/iran.csv')
+provinces <- iran_2009_election %>% 
+  distinct(province) %>% 
+  pull()
+grid_filtered <- grid %>% 
+  filter(name %in% provinces)
+
+iran_2009_election %>%
+  pivot_longer(
+    cols = c("ahmadinejad":"mousavi", "voided_votes"),
+    names_to = 'candidate',
+    values_to = 'votes'
+  ) %>%
+  mutate(percentage_votes = (votes / total_votes_cast) * 100) %>%
+  group_by(province, candidate) %>%
+  summarise(mean_percentage_votes = mean(percentage_votes),
+            share_votes = as.integer(mean_percentage_votes)) %>%
+  #mutate(share_votes = as.integer(round(mean_percentage_votes))) %>%
+  mutate(candidate_name_fa = plyr::mapvalues(
+    candidate,
+    c('ahmadinejad', 'karrubi', 'mousavi', 'rezai', 'voided_votes'),
+    c('احمدی نژاد',
+      'کروبی',
+      'موسوی',
+      'رضائی',
+      'آرای باطله')
+  )) %>%
+  left_join(grid_filtered, by = c('province' = 'name')) %>%
+  
+  write_csv('data/iran_election_2009.csv')
+```
+
+```{r fig.height=25,fig.width=25}
+library(waffle)
+colors <- c(
+   'ahmadinejad' = '#F94144',
+  'karrubi' = '#9c89b8',
+  'mousavi' = '#43AA8B',
+  'rezai' = '#577590',
+  'voided_votes' = '#F3722C'
+)
+
+iran_election_2009 %>%
+  ggplot(aes(fill = candidate, values = share_votes)) +
+  geom_waffle(
+    n_rows = 10,
+    size = 2,
+    make_proportional = TRUE,
+    color = 'white',
+    flip = TRUE
+  ) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_y_discrete(expand = c(0, 0)) +
+  scale_fill_manual(
+    values = colors,
+    labels = c('احمدی نژاد',
+               'کروبی',
+               'موسوی',
+               'رضائی',
+               'آرای باطله')
+  ) +
+  labs(title = 'سهم رای کاندیدهای ریاست جمهوری در انتخابات سال 88',
+       fill = '') +
+  facet_wrap(~ name_farsi) +
+  theme_void() +
+  theme_fa(
+    strip_text_size = 25,
+    plot_title_size = 35,
+    plot_title_margin = 20
+  ) +
+  theme(
+    plot.margin = margin(30, 30, 30, 30),
+    legend.position = 'top',
+    legend.text = element_text(size = 25, margin = margin(b = 10)),
+    strip.text = element_text(margin = margin(t = 10, b = 10)),
+    panel.spacing.x = unit(2, "lines"),
+    panel.spacing.y = unit(2, "lines")
+  )
+
+  
+```
+
+

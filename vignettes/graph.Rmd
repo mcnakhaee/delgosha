@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidytext)
+library(tidyverse)
+library(widyr)
+library(ggraph)
+library(igraph)
+library(tidygraph)
+```
+
+```{r fig.height=15,fig.width=15}
+stop_words <-  read_csv('C:\\Users\\mcnak\\Documents\\MEGAsync\\mcnakhaee\\imuhammadir\\slides\\slides\\tidyverse\\Text Mining\\data\\stopwords_dataframe.csv')
+remotes::install_github('mcnakhaee/beyt'
+                        )
+library(beyt)
+
+
+bigram_counts <- poems %>% 
+  filter(century <6) %>% 
+  unnest_tokens(output = bigram, input = poem,token = 'ngrams',n = 2) %>% 
+  count(bigram,sort = TRUE) %>% 
+  separate(bigram, c('word_1','word_2'),sep = " ") %>% 
+  filter(!word_1 %in% stop_words$word,
+         !word_2 %in% stop_words$word) %>% 
+  arrange(desc(n))%>% 
+  filter(n >25) 
+
+1
+```
+```{r ig.height=15,fig.width=15}
+
+bigram_counts %>% write_csv('C:\\Users\\mcnak\\Documents\\MEGAsync\\mcnakhaee\\packages\\Delgosha\\delgosha\\\vignettes\\bigram_counts.csv')
+bigram_counts %>% 
+graph_from_data_frame() %>% 
+  ggraph(layout = 'nicely') + 
+  geom_node_text(aes(label = name)) +
+  geom_edge_link(aes(edge_alpha = n),color = 'indianred') +
+  labs(title = 'پراستفاده ترین ترکیب کلمات به کار رفته در آثار شعرای قرن 3 تا 5 هجری شمسی') +
+  theme_void() +
+  theme_fa() 
+```
+
