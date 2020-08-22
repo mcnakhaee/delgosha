@@ -1,6 +1,6 @@
 Package: delgosha
 Title: An opinionated package with additional RTL ggplot2 themes and palettes for Persian
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: 
     person(given = "Muhammad",
            family = "Chenariyan Nakhaee",
@@ -33,3 +33,5 @@ Suggests:
     png (>= 0.1-7),
     stringr
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
