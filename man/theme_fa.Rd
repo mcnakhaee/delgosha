@@ -18,6 +18,7 @@ theme_fa(
   strip_text_font = base_font,
   strip_text_size = 12,
   strip_text_face = "plain",
+  strip_text_margin = 10,
   caption_font = base_font,
   caption_size = 9,
   caption_face = "italic",
