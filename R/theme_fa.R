@@ -45,6 +45,7 @@ theme_fa <- function(base_font = "Nahid FD",
                              strip_text_font = base_font,
                              strip_text_size = 12,
                              strip_text_face = "plain",
+                             strip_text_margin = 10,
                              caption_font = base_font,
                              caption_size = 9,
                              caption_face = "italic",
@@ -65,9 +66,11 @@ theme_fa <- function(base_font = "Nahid FD",
       text = element_text(family = base_font,size = base_size),
       plot.title = element_text(
         family =  plot_title_font,
+
         hjust = 1,
         margin = margin(t = plot_title_margin,
-                        b = plot_title_margin)
+                        b = plot_title_margin),
+        size = plot_title_size,
       ),
       plot.subtitle = element_text(
         family =  subtitle_font,
@@ -90,6 +93,10 @@ theme_fa <- function(base_font = "Nahid FD",
     )
 
 
+  thm <-
+    thm + theme(strip.text = element_text(family = strip_text_font,
+                                          size = strip_text_size,
+                                          face = strip_text_face ))
   thm <-
     thm +  theme(
       axis.title.y = element_text(family = axis_title_font,
