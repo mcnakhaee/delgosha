@@ -3,37 +3,18 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(tidytext)
 library(tidyverse)
 library(widyr)
 library(ggraph)
 library(igraph)
 library(tidygraph)
+library(delgosha)
 ```
-
 ```{r fig.height=15,fig.width=15}
-stop_words <-  read_csv('C:\\Users\\mcnak\\Documents\\MEGAsync\\mcnakhaee\\imuhammadir\\slides\\slides\\tidyverse\\Text Mining\\data\\stopwords_dataframe.csv')
-remotes::install_github('mcnakhaee/beyt'
-                        )
-library(beyt)
-
-
-bigram_counts <- poems %>% 
-  filter(century <6) %>% 
-  unnest_tokens(output = bigram, input = poem,token = 'ngrams',n = 2) %>% 
-  count(bigram,sort = TRUE) %>% 
-  separate(bigram, c('word_1','word_2'),sep = " ") %>% 
-  filter(!word_1 %in% stop_words$word,
-         !word_2 %in% stop_words$word) %>% 
-  arrange(desc(n))%>% 
-  filter(n >25) 
-
-1
-```
-```{r ig.height=15,fig.width=15}
-
-bigram_counts %>% write_csv('C:\\Users\\mcnak\\Documents\\MEGAsync\\mcnakhaee\\packages\\Delgosha\\delgosha\\\vignettes\\bigram_counts.csv')
+import_all_fonts()
+bigram_counts <- read_csv('data/bigram_counts.csv')
 bigram_counts %>% 
 graph_from_data_frame() %>% 
   ggraph(layout = 'nicely') + 
@@ -41,6 +22,84 @@ graph_from_data_frame() %>%
   geom_edge_link(aes(edge_alpha = n),color = 'indianred') +
   labs(title = 'پراستفاده ترین ترکیب کلمات به کار رفته در آثار شعرای قرن 3 تا 5 هجری شمسی') +
   theme_void() +
-  theme_fa() 
+  theme_fa()
+```
+```{r fig.height=20,fig.width=20}
+library(ggthemes)
+shanameh <- read_csv('data/shahnameh_characters.csv')
+shanameh %>% 
+  drop_na() %>% 
+as_tbl_graph(directed = TRUE) %>% 
+activate(nodes ) %>% 
+  mutate(betweenness_centrality_score = centrality_betweenness(),
+         degree_centrality_score = centrality_degree()) %>% 
+    filter(degree_centrality_score > 3) %>% 
+  mutate(degree_centrality_score = centrality_degree()) %>% 
+  filter(betweenness_centrality_score > 1,
+         degree_centrality_score >0 ) %>% 
+filter(!is.na(name)) %>% 
+  ggraph(layout = 'nicely') +
+  geom_edge_link(aes(color = relationship),width =1.5,alpha = 0.5) +
+  geom_node_text(aes(label = name),size = 6 ,repel  = TRUE,family = 'Nahid FD') +
+  geom_node_point(size = 4,alpha =0.6) +
+  labs(title = 'شبکه روابط شخصیت های شاهنامه',
+       colour = '',
+       caption = 'منبع داده ها: وبسایت نیمروز') +
+  scale_edge_color_manual(values = c(
+    '#d62828',
+    '#2a9d8f',
+    '#e9c46a',
+    '#f4a261',
+    '#e76f51',
+    '#fe938c',
+    '#e6b89c',
+    '#ead2ac',
+    '#9cafb7',
+    '#4281a4',
+    '#06d6a0'
+  )) +
+   guides(
+   colour = guide_colorbar(override.aes = list(alpha = 0.9)))+
+  theme_void() +
+  theme_fa() +
+  theme(legend.position = 'top',
+        legend.title = element_blank(),
+        legend.text = element_text(size = 15),
+        plot.margin = margin(30,30,30,30))
+```
+
+```{r}
+library(geofacet)
+library(zoo)
+library(gghighlight)
+library(lubridate)
+grid <- read_csv('data/iran_provinces.csv')
+ds<-read_csv('data/corona_iran_provinces.csv')
+ds %>%
+  arrange(date, province) %>%
+  mutate(infected = as.numeric(infected)) %>%
+  group_by(province, date, ) %>%
+  mutate(infected = as.integer(infected),
+         infected = na.locf0(infected)) %>%
+  summarise(sum_infected = sum(infected)) %>%
+  mutate(infected_cum_sum =  cumsum(sum_infected))  %>%
+  mutate(day = day(date)) %>%
+  mutate(name_farsi = province) %>% 
+    ggplot(aes(day, infected_cum_sum, color = province, fill = province)) +
+  geom_line(color = 'indianred',
+            size = 1.5,
+            alpha = 1) +
+  geom_point(color = 'indianred', size = 3) +
+  gghighlight(unhighlighted_params = list(
+    size = 1.5,
+    width = 0.5,
+    color = '#F6DAB4',
+    alpha  = 0.7
+  )) +
+  #facet_geo(~name_farsi,grid = grid) %>% 
+  #facet_wrap(~name_farsi) +
+  
+  theme_minimal_fa()
+
 ```
 
