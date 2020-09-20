@@ -62,11 +62,12 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
                              axis_title_size = 12,
                              plot_margin = margin(30, 30, 30, 30)) {
   thm <-
-    ggplot2::theme_minimal(base_family = base_font, base_size = base_size,color = text_col)
+    ggplot2::theme_minimal(base_family = base_font, base_size = base_size)
 
   thm <-
+
     thm + theme(
-      text = element_text(family = base_font),
+      text = element_text(family = base_font,color = text_col),
       plot.title = element_text(
         family =  plot_title_font,
         hjust = 1,

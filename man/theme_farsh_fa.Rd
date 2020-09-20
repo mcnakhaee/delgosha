@@ -8,6 +8,7 @@ https://www.roozrang.com/\%d8\%b7\%d8\%b1\%d8\%a7\%d8\%ad\%db\%8c-\%d9\%87\%d9\%
 theme_farsh_fa(
   base_font = "Vazir FD",
   base_size = 11.5,
+  text_col = "#774936",
   plot_title_font = "Vazir Black FD",
   plot_title_size = 25,
   plot_title_face = "bold",
@@ -31,11 +32,10 @@ theme_farsh_fa(
   axis_title_font = subtitle_font,
   axis_title_size = 9,
   axis_title_face = "plain",
-  axis_title_just = "rt",
   plot_margin = margin(30, 30, 30, 30),
-  grid_col = "#cccccc",
+  grid_col = "#eddcd2",
   grid = TRUE,
-  axis_col = "#cccccc",
+  axis_col = "#eddcd2",
   axis = FALSE,
   ticks = FALSE
 )

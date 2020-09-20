@@ -7,6 +7,7 @@
 theme_minimal_fa(
   base_font = "Nahid FD",
   base_size = 12.5,
+  text_col = "#8e8e93",
   plot_title_font = "Nahid FD",
   plot_title_size = 30,
   plot_title_face = "bold",

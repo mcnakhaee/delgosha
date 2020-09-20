@@ -92,7 +92,7 @@ theme_digikala <- function(base_font = "WeblogmaYekan",
         margin = margin(t = plot_title_margin, b =
                           plot_title_margin),
         face = plot_title_face,
-        color = text_color
+        color = 'black'
       ),
       plot.subtitle = element_text(
         family =  plot_title_font,

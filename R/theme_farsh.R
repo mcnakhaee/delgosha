@@ -72,7 +72,7 @@ theme_farsh_fa <- function(base_font = "Vazir FD",
                            ticks = FALSE) {
   ## Mimal Theme
   thm <-
-    ggplot2::theme_minimal(base_family = base_font, base_size = base_size,color = text_col)
+    ggplot2::theme_minimal(base_family = base_font, base_size = base_size)
   # Legends
   thm <- thm + theme(
     legend.text = element_text(
