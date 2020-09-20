@@ -35,6 +35,7 @@
 #' @examples
 theme_minimal_fa <- function(base_font = "Nahid FD",
                              base_size = 12.5,
+                             text_col = '#8e8e93',
                              plot_title_font = "Nahid FD",
                              plot_title_size = 30,
                              plot_title_face = "bold",
@@ -61,7 +62,7 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
                              axis_title_size = 12,
                              plot_margin = margin(30, 30, 30, 30)) {
   thm <-
-    ggplot2::theme_minimal(base_family = base_font, base_size = base_size)
+    ggplot2::theme_minimal(base_family = base_font, base_size = base_size,color = text_col)
 
   thm <-
     thm + theme(
@@ -70,7 +71,10 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
         family =  plot_title_font,
         hjust = 1,
         margin = margin(t = plot_title_margin,
-                        b = plot_title_margin)
+                        b = plot_title_margin),
+        size = plot_title_size,
+        face = plot_title_face,
+        color = text_col
       ),
       plot.subtitle = element_text(
         family =  subtitle_font,
@@ -78,7 +82,7 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
         margin = margin(b = subtitle_margin),
         face = subtitle_face,
         size = subtitle_size,
-        color = '#8e8e93'
+        color = text_col
       ),
       plot.caption = element_text(
         family =  caption_font,
@@ -88,8 +92,16 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
         margin = margin(t = caption_margin,
                         b = caption_margin),
 
-        color = '#8e8e93'
-      )
+        color = text_col
+      ),
+      legend.text = element_text(
+        family = legend_font,
+        size = legend_font_size,
+        color = legend_color,
+
+      ),
+      legend.title = element_text(size = legend_title_size),
+      legend.position = legend_position
     )
 
 
@@ -105,6 +117,9 @@ theme_minimal_fa <- function(base_font = "Nahid FD",
         t = axis_margin
       ))
     )
+
+  thm <- thm + theme(plot.margin = plot_margin)
+
   thm
 
 }
