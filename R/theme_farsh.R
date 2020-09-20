@@ -40,6 +40,7 @@
 #' @examples
 theme_farsh_fa <- function(base_font = "Vazir FD",
                            base_size = 11.5,
+                           text_col = '#774936',
                            plot_title_font = "Vazir Black FD",
                            plot_title_size = 25,
                            plot_title_face = "bold",
@@ -63,21 +64,15 @@ theme_farsh_fa <- function(base_font = "Vazir FD",
                            axis_title_font = subtitle_font,
                            axis_title_size = 9,
                            axis_title_face = "plain",
-                           axis_title_just = "rt",
                            plot_margin = margin(30, 30, 30, 30),
-                           grid_col = "#cccccc",
+                           grid_col = "#eddcd2",
                            grid = TRUE,
-                           axis_col = "#cccccc",
+                           axis_col = "#eddcd2",
                            axis = FALSE,
                            ticks = FALSE) {
   ## Mimal Theme
   thm <-
-    ggplot2::theme_minimal(base_family = base_font, base_size = base_size)
-
-
-  text_col <- '#774936'
-  grid_col <- '#eddcd2'
-
+    ggplot2::theme_minimal(base_family = base_font, base_size = base_size,color = text_col)
   # Legends
   thm <- thm + theme(
     legend.text = element_text(
@@ -110,12 +105,14 @@ theme_farsh_fa <- function(base_font = "Vazir FD",
         family =  plot_title_font,
         hjust = 1,
         margin = margin(b = plot_title_margin) ,
+        size = plot_title_size,
         color = text_col
       ),
       plot.subtitle = element_text(
         family =  subtitle_font,
         hjust = 1,
         margin = margin(b = subtitle_margin) ,
+        size = subtitle_size,
         face = subtitle_face,
         color = text_col
       ),
@@ -123,6 +120,7 @@ theme_farsh_fa <- function(base_font = "Vazir FD",
         family =  caption_font,
         hjust = 0,
         face = caption_face,
+        size = caption_size,
         color = text_col
       )
     )
@@ -130,13 +128,13 @@ theme_farsh_fa <- function(base_font = "Vazir FD",
 
   thm <-
     thm + theme(
-      strip.text = element_text(color = text_col, size = strip_text_size),
+      strip.text = element_text(family = base_font,color = text_col, size = strip_text_size,face = axis_title_face),
       panel.spacing.x = unit(2, "lines"),
       panel.spacing.y = unit(2, "lines")
     )
 
   thm <- thm + theme(
-    axis.text =  element_text(color = text_col),
+    axis.text =  element_text(color = text_col,size = axis_text_size),
     axis.title.y = element_text(margin = margin(
       t = 0,
       r = 10,
