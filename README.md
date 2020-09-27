@@ -1,6 +1,14 @@
 Delgosha
 ================
 
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/instaloadeR)](https://CRAN.R-project.org/package=instaloadeR)
+<!-- badges: end -->
+
 Delgosha is an opinionated package which aims to provide a collection of
 ggplot2 themes for RTL languages (mostly Persian).
 
@@ -217,7 +225,7 @@ iran_election_2009 %>%
 
 #### Aljazeera theme
 
-Based on Aljazeera’s font. s
+Based on Aljazeera’s font.
 
 ``` r
 library(quRan)
@@ -233,6 +241,11 @@ library(ggwordcloud)
 
 ``` r
 library(tidytext)
+```
+
+    ## Warning: package 'tidytext' was built under R version 3.6.3
+
+``` r
 quran_ar %>% 
   unnest_tokens(word,text) %>% 
   count(word,revelation_type,sort = TRUE) %>%
