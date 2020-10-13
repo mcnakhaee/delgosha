@@ -241,11 +241,6 @@ library(ggwordcloud)
 
 ``` r
 library(tidytext)
-```
-
-    ## Warning: package 'tidytext' was built under R version 3.6.3
-
-``` r
 quran_ar %>% 
   unnest_tokens(word,text) %>% 
   count(word,revelation_type,sort = TRUE) %>%
